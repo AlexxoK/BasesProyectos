@@ -4,8 +4,14 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import { hash } from 'argon2';
+
+import Admin from '../src/admins/admin.model.js';
+
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
+import adminRoutes from '../src/admins/admin.routes.js';
+import clienteRoutes from '../src/clientes/cliente.routes.js';
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
@@ -17,7 +23,8 @@ const middlewares = (app) => {
 }
 
 const routes = (app) => {
-
+    app.use("/gestorEmpresas/v1/admins", adminRoutes);
+    app.use("/gestorEmpresas/v1/clientes", clienteRoutes);
 }
 
 const conectarDB = async () => {
@@ -44,3 +51,30 @@ export const initServer = async () => {
         console.log(`Server init failed: ${err}!`);
     }
 }
+
+export const createAdmin = async () => {
+    try {
+        const adminExists = await Admin.findOne({ role: "ADMIN_ROLE" });
+
+        if (!adminExists) {
+            const hashedPassword = await hash("santosk027");
+
+            const admin = new Admin({
+                name: "Elmer",
+                surname: "Santos",
+                username: "SantosK",
+                email: "santosk@gmail.com",
+                password: hashedPassword,
+                phone: "12345678",
+                role: "ADMIN_ROLE",
+            });
+
+            await admin.save();
+            console.log("Administrador creado con éxito!");
+        } else {
+            console.log("El administrador ya existe!");
+        }
+    } catch (error) {
+        console.error("Error al crear el administrador:", error.message);
+    }
+};
