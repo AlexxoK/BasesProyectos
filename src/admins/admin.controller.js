@@ -2,6 +2,41 @@ import { response, request } from "express";
 import { hash, verify } from "argon2";
 import Admin from "./admin.model.js";
 
+export const saveAdmin = async (req, res) => {
+    try {
+        const data = req.body;
+
+        const encryptedPassword = await hash(data.password);
+
+        const admin = await Admin.create({
+            name: data.name,
+            surname: data.surname,
+            username: data.username,
+            email: data.email,
+            phone: data.phone,
+            password: encryptedPassword,
+            role: data.role,
+        })
+
+        return res.status(201).json({
+            message: "Admin registered successfully!",
+            adminDetails: {
+                admin: admin.email
+            }
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        return res.status(500).json({
+            message: "Error registering Admin!",
+            error: err.message
+        })
+
+    }
+}
+
 export const findAllAdmins = async (req = request, res = response) => {
     try {
         const { limite = 10, desde = 0 } = req.query;

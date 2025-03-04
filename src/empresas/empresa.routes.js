@@ -1,59 +1,59 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { saveCliente, findAllClientes, findOneClienteById, putClienteById, deleteClienteById } from "./cliente.controller.js";
+import { saveEmpresa, findAllEmpresas, findOneEmpresaById, putEmpresaById, deleteEmpresaById } from "./empresa.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWTAdmin } from "../middlewares/validar-jwt.js";
 import { tieneRoleAdmin } from "../middlewares/validar-roles.js";
-import { existeClienteById } from "../helpers/db-validator.js";
+import { existeEmpresaById } from "../helpers/db-validator.js";
 
 const router = Router();
 
 router.post(
-    "/saveCliente",
+    "/saveEmpresa",
     [
         validarJWTAdmin,
         tieneRoleAdmin("ADMIN_ROLE"),
         validarCampos
     ],
-    saveCliente
+    saveEmpresa
 )
 
-router.get("/findAllClientes", findAllClientes)
+router.get("/findAllEmpresas", findAllEmpresas)
 
 router.get(
-    "/findOneClienteById/:id",
+    "/findOneEmpresaById/:id",
     [
         validarJWTAdmin,
         tieneRoleAdmin("ADMIN_ROLE"),
         check("id", "id invalid!").isMongoId(),
-        check("id").custom(existeClienteById),
+        check("id").custom(existeEmpresaById),
         validarCampos
     ],
-    findOneClienteById
+    findOneEmpresaById
 )
 
 router.put(
-    "/putClienteById/:id",
+    "/putEmpresaById/:id",
     [
         validarJWTAdmin,
         tieneRoleAdmin("ADMIN_ROLE"),
         check("id", "id invalid!").isMongoId(),
-        check("id").custom(existeClienteById),
+        check("id").custom(existeEmpresaById),
         validarCampos
     ],
-    putClienteById
+    putEmpresaById
 )
 
 router.delete(
-    "/deleteClienteById/:id",
+    "/deleteEmpresaById/:id",
     [
         validarJWTAdmin,
         tieneRoleAdmin("ADMIN_ROLE"),
         check("id", "id invalid!").isMongoId(),
-        check("id").custom(existeClienteById),
+        check("id").custom(existeEmpresaById),
         validarCampos
     ],
-    deleteClienteById
+    deleteEmpresaById
 )
 
 export default router;

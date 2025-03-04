@@ -13,12 +13,6 @@ const ClienteSchema = Schema({
         maxlength: [25, "25 characters maximum!"],
     },
 
-    email: {
-        type: String,
-        required: [true, "The email is required!"],
-        unique: true,
-    },
-
     phone: {
         type: String,
         minlength: [8, "Phone number must be 8 digits long"],
@@ -35,11 +29,5 @@ const ClienteSchema = Schema({
         timestamps: true,
         versionKey: false,
     });
-
-ClienteSchema.methods.toJSON = function () {
-    const { _v, password, _id, ...cliente } = this.toObject();
-    cliente.uid = _id;
-    return cliente;
-};
 
 export default model('Cliente', ClienteSchema);

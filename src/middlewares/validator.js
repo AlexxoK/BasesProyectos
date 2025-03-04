@@ -2,7 +2,7 @@ import { body } from "express-validator";
 import { validarCampos } from "./validar-campos.js";
 import { existenteAdminEmail, esRoleValido } from "../helpers/db-validator.js";
 
-export const registerAdminValidator = [
+export const saveAdminValidator = [
     body("name", "The name is required!").not().isEmpty(),
     body("surname", "The surname is required!").not().isEmpty(),
     body("email", "You must enter a valid email!").isEmail(),
