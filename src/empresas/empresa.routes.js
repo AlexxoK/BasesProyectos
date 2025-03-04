@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { saveEmpresa, findAllEmpresas, findOneEmpresaById, putEmpresaById, deleteEmpresaById } from "./empresa.controller.js";
+import { saveEmpresa, findAllEmpresas, findAllEmpresasByTrayectoria, findAllEmpresasByCategoria, findAllEmpresasByOrden, putEmpresaById } from "./empresa.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWTAdmin } from "../middlewares/validar-jwt.js";
 import { tieneRoleAdmin } from "../middlewares/validar-roles.js";
@@ -20,17 +20,11 @@ router.post(
 
 router.get("/findAllEmpresas", findAllEmpresas)
 
-router.get(
-    "/findOneEmpresaById/:id",
-    [
-        validarJWTAdmin,
-        tieneRoleAdmin("ADMIN_ROLE"),
-        check("id", "id invalid!").isMongoId(),
-        check("id").custom(existeEmpresaById),
-        validarCampos
-    ],
-    findOneEmpresaById
-)
+router.get("/findAllEmpresasByTrayectoria/:trayectoria", findAllEmpresasByTrayectoria)
+
+router.get("/findAllEmpresasByCategoria/:categoria", findAllEmpresasByCategoria)
+
+router.get("/findAllEmpresasByOrden", findAllEmpresasByOrden)
 
 router.put(
     "/putEmpresaById/:id",
@@ -42,18 +36,6 @@ router.put(
         validarCampos
     ],
     putEmpresaById
-)
-
-router.delete(
-    "/deleteEmpresaById/:id",
-    [
-        validarJWTAdmin,
-        tieneRoleAdmin("ADMIN_ROLE"),
-        check("id", "id invalid!").isMongoId(),
-        check("id").custom(existeEmpresaById),
-        validarCampos
-    ],
-    deleteEmpresaById
 )
 
 export default router;

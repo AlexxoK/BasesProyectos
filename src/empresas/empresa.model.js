@@ -11,15 +11,34 @@ const EmpresaSchema = Schema({
     trayectoria: {
         type: String,
         required: [true, "La trayectoria es obligatoria."],
-        maxlength: [500, "La trayectoria debe tener máximo 500 caracteres."],
+        enum: [
+            'Tecnología y Comunicaciones',
+            'Electrónica y Equipos de Seguridad',
+            'Energía Renovable',
+            'Alimentos y Bebidas',
+            'Construcción y Arquitectura',
+            'Moda y Textiles',
+            'Turismo y Hospitalidad',
+            'Productos Químicos y Materiales',
+            'Salud y Medicina',
+            'Logística y Transporte',
+        ],
         trim: true,
+        maxlength: [500, "La trayectoria debe tener máximo 500 caracteres."]
     },
 
     categoria: {
         type: String,
         required: [true, "La categoría empresarial es obligatoria."],
-        maxlength: [500, "La categoría debe tener máximo 500 caracteres."],
+        enum: [
+            'Microempresa',
+            'Startup',
+            'Gran Empresa',
+            'Corporación',
+            'Multinacional',
+        ],
         trim: true,
+        maxlength: [500, "La categoría debe tener máximo 500 caracteres."]
     },
 
     estado: {
@@ -27,9 +46,9 @@ const EmpresaSchema = Schema({
         default: true,
     }
 },
-    {
-        timestamps: true,
-        versionKey: false,
-    });
+{
+    timestamps: true,
+    versionKey: false,
+});
 
 export default model('Empresa', EmpresaSchema);

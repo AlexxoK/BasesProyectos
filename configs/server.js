@@ -12,7 +12,6 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import adminRoutes from '../src/admins/admin.routes.js';
-import clienteRoutes from '../src/clientes/cliente.routes.js';
 import empresaRoutes from '../src/empresas/empresa.routes.js';
 
 const middlewares = (app) => {
@@ -27,7 +26,6 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use("/gestorEmpresas/v1/auth", authRoutes);
     app.use("/gestorEmpresas/v1/admins", adminRoutes);
-    app.use("/gestorEmpresas/v1/clientes", clienteRoutes);
     app.use("/gestorEmpresas/v1/empresas", empresaRoutes);
 }
 

@@ -1,6 +1,5 @@
 import Role from '../roles/role.model.js';
 import Admin from '../admins/admin.model.js';
-import Cliente from '../clientes/cliente.model.js';
 import Empresa from '../empresas/empresa.model.js';
 
 export const esRoleValido = async (role = ' ') => {
@@ -23,14 +22,6 @@ export const existeAdminById = async (id = '') => {
     const existeAdmin = await Admin.findById(id);
 
     if (!existeAdmin) {
-        throw new Error(`id ${id} dont exists!`);
-    }
-}
-
-export const existeClienteById = async (id = '') => {
-    const existeCliente = await Cliente.findById(id);
-
-    if (!existeCliente) {
         throw new Error(`id ${id} dont exists!`);
     }
 }

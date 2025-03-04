@@ -1,30 +1,15 @@
 [{
   "_id": {
-    "$oid": "67c65bbcc08e9485f7dff9a7"
+    "$oid": "67c73533a5343001f53a4ba6"
   },
-  "impacto": "Reducción de huella de carbono",
-  "trayectoria": "10 años en el sector energético",
-  "categoria": "Tecnología",
+  "impacto": "Avances en el mundo electrónico",
+  "trayectoria": "Electrónica y Equipos de Seguridad",
+  "categoria": "Startup",
   "estado": true,
   "createdAt": {
-    "$date": "2025-03-04T01:47:40.769Z"
+    "$date": "2025-03-04T17:15:31.327Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T01:47:40.769Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67c66983c08e9485f7dff9ae"
-  },
-  "impacto": "Aumento salarial",
-  "trayectoria": "10 años en el sector gubernamental",
-  "categoria": "Política",
-  "estado": true,
-  "createdAt": {
-    "$date": "2025-03-04T02:46:27.281Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-04T02:50:19.962Z"
+    "$date": "2025-03-04T17:15:31.327Z"
   }
 }]

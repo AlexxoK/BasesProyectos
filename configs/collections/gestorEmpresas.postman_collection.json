@@ -211,176 +211,6 @@
 					]
 				},
 				{
-					"name": "clientes",
-					"item": [
-						{
-							"name": "saveCliente",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNDkyMTcsImV4cCI6MTc0MTA1MjgxN30.G2MjdF1gSFLaXHsist2-_ftmDZ4DXr4QDswFfa_D48k",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Andrea\",\r\n  \"surname\": \"Orozco\",\r\n  \"phone\": \"12345678\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/clientes/saveCliente",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"clientes",
-										"saveCliente"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "findAllClientes",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/clientes/findAllClientes?limite=10&desde=0",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"clientes",
-										"findAllClientes"
-									],
-									"query": [
-										{
-											"key": "limite",
-											"value": "10"
-										},
-										{
-											"key": "desde",
-											"value": "0"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "findOneClienteById",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNDkyMTcsImV4cCI6MTc0MTA1MjgxN30.G2MjdF1gSFLaXHsist2-_ftmDZ4DXr4QDswFfa_D48k",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/clientes/findOneClienteById/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"clientes",
-										"findOneClienteById",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "putClienteById",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNDkyMTcsImV4cCI6MTc0MTA1MjgxN30.G2MjdF1gSFLaXHsist2-_ftmDZ4DXr4QDswFfa_D48k",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"Jouse\",\r\n  \"surname\": \"Boror\",\r\n  \"phone\": \"12345678\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/clientes/putClienteById/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"clientes",
-										"putClienteById",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteClienteById",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNDkyMTcsImV4cCI6MTc0MTA1MjgxN30.G2MjdF1gSFLaXHsist2-_ftmDZ4DXr4QDswFfa_D48k",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/clientes/deleteClienteById/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"clientes",
-										"deleteClienteById",
-										""
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "empresas",
 					"item": [
 						{
@@ -390,13 +220,13 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNTI3OTgsImV4cCI6MTc0MTA1NjM5OH0.18edWfDwzAomiWN1FabDIPRrwuYs0LwxPehWqsa_MDk",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3MGExMTExNTU2OGExOWE4ZDA1MTEiLCJpYXQiOjE3NDExMDU2NDcsImV4cCI6MTc0MTEwOTI0N30.kc2E1jXlplGfh6vYK2ROgh_HuL4-vnF-XjyNyRUi5xY",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"impacto\": \"Reducción de accidentes\",\r\n    \"trayectoria\": \"10 años en el sector vial\",\r\n    \"categoria\": \"Construcción\"\r\n}",
+									"raw": "{\r\n    \"impacto\": \"Avances en el mundo electrónico\",\r\n    \"trayectoria\": \"Electrónica y Equipos de Seguridad\",\r\n    \"categoria\": \"Startup\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -453,18 +283,18 @@
 							"response": []
 						},
 						{
-							"name": "findOneEmpresaById",
+							"name": "findAllEmpresasByTrayectoria",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNTY0MjIsImV4cCI6MTc0MTA2MDAyMn0.v7fVDvabBWOi42W9QKZybpRYJueQKDAM_cPFHTidIUQ",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MjI4NTQ4ZWY0YjVkMWQ1Mzk4ZjEiLCJpYXQiOjE3NDEwNDAyNDYsImV4cCI6MTc0MTA0Mzg0Nn0.-i7ULlXWzlZOQkbOUuJQ8QgZAp7UOvkpOxM3BfKCDAM",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/empresas/findOneEmpresaById/",
+									"raw": "http://localhost:3004/gestorEmpresas/v1/empresas/findAllEmpresasByTrayectoria/Alimentos y Bebidas",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -474,8 +304,73 @@
 										"gestorEmpresas",
 										"v1",
 										"empresas",
-										"findOneEmpresaById",
-										""
+										"findAllEmpresasByTrayectoria",
+										"Alimentos y Bebidas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllEmpresasByCategoria",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MjI4NTQ4ZWY0YjVkMWQ1Mzk4ZjEiLCJpYXQiOjE3NDEwNDAyNDYsImV4cCI6MTc0MTA0Mzg0Nn0.-i7ULlXWzlZOQkbOUuJQ8QgZAp7UOvkpOxM3BfKCDAM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3004/gestorEmpresas/v1/empresas/findAllEmpresasByCategoria/Startup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"gestorEmpresas",
+										"v1",
+										"empresas",
+										"findAllEmpresasByCategoria",
+										"Startup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllEmpresasByOrden",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3004/gestorEmpresas/v1/empresas/findAllEmpresasByOrden?limite=10&desde=0&orden=desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"gestorEmpresas",
+										"v1",
+										"empresas",
+										"findAllEmpresasByOrden"
+									],
+									"query": [
+										{
+											"key": "limite",
+											"value": "10"
+										},
+										{
+											"key": "desde",
+											"value": "0"
+										},
+										{
+											"key": "orden",
+											"value": "desc"
+										}
 									]
 								}
 							},
@@ -514,35 +409,6 @@
 										"empresas",
 										"putEmpresaById",
 										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteEmpresaById",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NGQ2NjJjZTdjZDJiNmM2YmE2MmEiLCJpYXQiOjE3NDEwNTY0MjIsImV4cCI6MTc0MTA2MDAyMn0.v7fVDvabBWOi42W9QKZybpRYJueQKDAM_cPFHTidIUQ",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:3004/gestorEmpresas/v1/empresas/deleteEmpresaById/67c66983c08e9485f7dff9ae",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"gestorEmpresas",
-										"v1",
-										"empresas",
-										"deleteEmpresaById",
-										"67c66983c08e9485f7dff9ae"
 									]
 								}
 							},
