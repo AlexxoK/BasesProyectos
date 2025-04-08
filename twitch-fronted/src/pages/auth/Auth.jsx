@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Login } from "../../components/Login";
+import { Register } from "../../components/Register";
 
 import "./authPage.css";
 
 export const Auth = () => {
-  
+
   const [isLogin, setIsLoading] = useState(true);
 
   const handleAuthPageToggle = () => {
@@ -14,18 +15,10 @@ export const Auth = () => {
   return (
     <div className="auth-container">
       {isLogin ? (
-        <Login switchAuthHandler={handleAuthPageToggle}/>
+        <Login switchAuthHandler={handleAuthPageToggle} />
       ) : (
-        register
+        <Register switchAuthHandler={handleAuthPageToggle} />
       )}
     </div>
   )
-
-  return (
-    <div>
-        Authpage
-    </div>
-  )
 }
-
-export default Auth
