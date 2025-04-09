@@ -55,7 +55,7 @@ export const Navbar = () => {
                     <NavButton text="Login" onClickHandler={handleNavigateToAuthPage}/>
                 ) : (
                     <div>
-                        <NavButton text="Mi Cuenta" onClickHandler={handleNavigateToSettingPage}/>
+                        <NavButton text="My Account" onClickHandler={handleNavigateToSettingPage}/>
                         <NavButton text="Logout" onClickHandler={handleLogout}/>
                     </div>
                 )}
