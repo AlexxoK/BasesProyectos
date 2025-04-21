@@ -6,12 +6,12 @@ export const Channels = ({channels}) => {
     const navigate = useNavigate()
 
     const handleNavigateToChannel = (id) => {
-        navigate(`/channel${id}`)
+        navigate(`/channel/${id}`)
     }
 
     return (
         <div className="channels-container">
-            { channels.map((c) => {
+            { channels.map((c) => (
                 <ChannelCard
                     key={c.id}
                     id={c.id}
@@ -21,7 +21,7 @@ export const Channels = ({channels}) => {
                     avatarUrl={c.avatarUrl}
                     navigateToChannelHandler={handleNavigateToChannel}
                 />
-            })}
+            ))}
         </div>
     )
 }
