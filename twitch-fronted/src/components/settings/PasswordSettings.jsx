@@ -63,7 +63,7 @@ export const PasswordSettings = () => {
     const isSumbitButtonDisabled = !formState.password.isValid ||
         !formState.newPassword.isValid
 
-    const handleFormSumbit = (event) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
         changePassword(formState.password.value, formState.newPassword.value)
     }
@@ -84,7 +84,7 @@ export const PasswordSettings = () => {
                     textArea={input.textArea}
                 />
             ))}
-            <button onClick={handleFormSumbit} disabled={isSumbitButtonDisabled}>
+            <button onClick={handleFormSubmit} disabled={isSumbitButtonDisabled}>
                 Actualizar Contraseña
             </button>
         </form>

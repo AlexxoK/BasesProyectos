@@ -103,7 +103,7 @@ export const ChannelSettings = ({ settings, saveSettings }) => {
         }))
     }
 
-    const handleFormSumbit = (event) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
 
         saveSettings({
@@ -113,4 +113,31 @@ export const ChannelSettings = ({ settings, saveSettings }) => {
             description: formState.description.value
         })
     }
+
+    const isSubmitButtonDisabled = !formState.username.isValid ||
+        !formState.title.isValid ||
+        !formState.avatarUrl.isValid ||
+        !formState.description.isValid
+
+    return (
+        <form className="settings-form">
+            {inputs.map((input) => (
+                <Input
+                    key={input.field}
+                    field={input.field}
+                    label={input.label}
+                    value={formState[input.field].value}
+                    onChangeHandler={handleInputValueChange}
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState[input.field].showError}
+                    validationMessage={input.validationMessage}
+                    type={input.type}
+                    textarea={input.textarea}
+                />
+            ))}
+            <button onClick={handleFormSubmit} disabled={isSubmitButtonDisabled}>
+                Update
+            </button>
+        </form>
+    )
 }
