@@ -11,7 +11,7 @@ const FollowButton = ({ channelId, getChannels }) => {
     return <button onClick={handleFollowChannel} className="channel-follow-button">Follow Channel</button>
 }
 
-export const channelDescription = ({
+export const ChannelDescription = ({
     username,
     title,
     description,
