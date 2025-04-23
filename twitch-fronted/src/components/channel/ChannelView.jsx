@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { ReactFlvPlayer } from "react-flv-player";
 import { ChannelDescription } from "./ChannelDescription";
 import { useChannelDetails } from "../../shared/hooks";
-import { LoadingSpinner } from "../LoadingSpinner";
+import { LoadingSpinner } from "../LoadingSpinner"
 
 export const Stream = ({streamUrl}) => {
-    return (
+    return(
         <div className="channel-video-container">
             <ReactFlvPlayer
                 url={streamUrl}
@@ -19,19 +19,19 @@ export const Stream = ({streamUrl}) => {
 
 export const ChannelView = ({getChannels}) => {
 
-    const { isFetching, getChannelsDetails, channelDetails } = useChannelDetails();
+    const { isFetching, getChannelDetails, channelDetails } = useChannelDetails();
 
     const { id } = useParams();
 
     useEffect(() => {
-        getChannelsDetails(id)
+        getChannelDetails(id)
     }, [])
 
-    if (isFetching) {
-        return <LoadingSpinner/>
+    if(isFetching){
+        return <LoadingSpinner />
     }
 
-    return (
+    return(
         <div className="channel-container">
             <div className="channel-video-description-section">
                 {channelDetails.data.isOnline ? (
